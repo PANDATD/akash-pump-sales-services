@@ -6,7 +6,8 @@ Responsive enquiry website focused on Pune. No ecommerce, payment gateway, front
 - Responsive landing page with services from the provided signboard.
 - Separate `styles.css` and `script.js` files so browser caching and future maintenance are easier without introducing a frontend framework or build step.
 - WhatsApp and phone links for 9822791005 and 9850030224.
-- Vercel serverless contact endpoint using Resend.
+- Vercel serverless contact endpoint using Resend, with server-side service/phone validation and a basic honeypot spam trap.
+- Baseline security headers via `vercel.json` (CSP, referrer policy, frame protection and MIME sniffing protection).
 - SEO title and description, canonical URL, LocalBusiness JSON-LD, sitemap, robots.txt, SVG logo/favicon/social cover.
 - Static-first delivery with no runtime frontend dependencies; the contact form is the only serverless API endpoint.
 - Open Graph metadata for Facebook/WhatsApp and Twitter/X large-image cards.
@@ -22,7 +23,7 @@ Configure these in Vercel → Project Settings → Environment Variables:
 - `RESEND_FROM_EMAIL`: required sender address on a domain verified in Resend, e.g. `Website Enquiries <website@your-verified-domain.example>`.
 - `RESEND_REPLY_TO` (optional): reply-to address.
 
-Redeploy after adding variables. The form reports an error and offers WhatsApp until required variables are configured. Test a real submission before treating email delivery as working. Never commit API keys.
+Redeploy after adding variables. The form reports an error and offers WhatsApp until required variables are configured. Test a real submission before treating email delivery as working. Never commit API keys. The honeypot is a basic spam deterrent, not a substitute for rate limiting or a managed anti-abuse service if spam becomes a problem.
 
 ## Google Search and SEO launch checklist
 
