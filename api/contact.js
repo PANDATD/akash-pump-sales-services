@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (!email || !apiKey) return res.status(503).json({ error: "Email notifications are not configured yet." });
   const text = ["New website enquiry — Akash Pump Sales & Services", "", "Name: " + name, "Phone: " + phone, "Service: " + service, "", "Requirement:", message].join("\n");
   try {
-    const response = await fetch("https://api.resend.com/emails", { method:"POST", headers:{Authorization:"Bearer "+apiKey,"Content-Type":"application/json"}, body:JSON.stringify({from:process.env.RESEND_FROM_EMAIL || "Website Enquiries <website@tejasdixit.in>",to:[email],subject:"New pump service enquiry: "+service,text,reply_to:process.env.RESEND_REPLY_TO || undefined}) });
+    const response = await fetch("https://api.resend.com/emails", { method:"POST", headers:{Authorization:"Bearer "+apiKey,"Content-Type":"application/json"}, body:JSON.stringify({from:sender,to:[email],subject:"New pump service enquiry: "+service,text,reply_to:process.env.RESEND_REPLY_TO || undefined}) });
     if (!response.ok) { const result=await response.json().catch(()=>({})); console.error("Resend request failed:",response.status,result.name||"API error"); return res.status(502).json({error:"Email delivery failed. Please use WhatsApp to contact the business."}); }
     return res.status(200).json({ok:true});
   } catch { console.error("Email notification request failed."); return res.status(502).json({error:"Email service is temporarily unavailable. Please use WhatsApp."}); }
