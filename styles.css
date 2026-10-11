@@ -70,4 +70,5 @@ h1{font-weight:800;letter-spacing:-.045em}
 .faq-list details[open]{border-color:#b9cbe4}
 @media(max-width:620px){.faq-list{grid-template-columns:1fr}}
 
+.checklist-title{margin:0;color:var(--navy)}.checklist-title-spaced{margin-top:24px}
 .hp-field{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
