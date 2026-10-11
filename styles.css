@@ -37,3 +37,56 @@ input,select,textarea{border-radius:9px}
  .service-carousel{scroll-behavior:auto}
  .btn,.service{transition:none}
 }
+
+/* Responsive layout hardening: Firefox, Safari and iPhone */
+html{scroll-margin-top:0}
+body{min-width:0;overflow-x:clip}
+.container,.hero-grid,.hero-grid>div,.visual,.contact,.form,.info,.service-carousel,.service{min-width:0}
+.hero-grid{align-items:center}
+.hero h1{max-width:100%;font-size:clamp(2.45rem,5.4vw,4.6rem);overflow-wrap:normal;word-break:normal}
+.hero .actions{display:flex;align-items:stretch;gap:12px;flex-wrap:wrap}
+.hero .actions .btn{flex:0 1 auto;min-width:0;max-width:100%;white-space:normal}
+.service-carousel{scrollbar-width:thin;overscroll-behavior-x:contain;scroll-snap-type:x mandatory}
+.service-carousel .service{height:auto;min-height:100%;overflow-wrap:break-word}
+.service-carousel .service h3,.service-carousel .service p,.service-carousel .service a{overflow-wrap:break-word;word-break:normal}
+.carousel-hint{margin:6px 2px 0;color:var(--muted);font-size:.82rem;text-align:left}
+.mobile .btn:first-child:before{content:"↗";display:inline-block;width:auto;height:auto;border-radius:0;background:none;margin-right:7px;font-size:1em}
+.mobile .btn:last-child:before{content:"☎";display:inline-block;width:auto;height:auto;border-radius:0;background:none;margin-right:7px;font-size:1em}
+@media(max-width:850px){
+ .hero-grid{gap:28px}
+ .hero h1{font-size:clamp(2.5rem,6.3vw,3.8rem)}
+}
+@media(max-width:620px){
+ .hero-grid{grid-template-columns:minmax(0,1fr);padding:clamp(28px,7vw,42px) 0 34px;gap:24px}
+ .hero h1{font-size:clamp(2.45rem,9.2vw,3.65rem);line-height:1.04;letter-spacing:-.045em;margin:16px 0}
+ .hero .eyebrow{font-size:clamp(.68rem,3.1vw,.78rem);letter-spacing:.09em;gap:8px}
+ .hero .eyebrow:before{width:22px;flex:0 0 22px}
+ .hero p{max-width:42rem;margin-bottom:22px;font-size:1rem;line-height:1.65}
+ .hero .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .hero .actions .btn{width:100%;min-height:52px;padding:12px 9px;font-size:clamp(.82rem,3.6vw,.98rem);line-height:1.25}
+ .hero .note{font-size:.9rem;line-height:1.55;margin-top:17px}
+ .visual{width:100%;padding:14px;border-radius:20px}
+ .pump{width:100%;height:auto;max-height:230px}
+ .service-carousel{gap:12px;padding:4px 2px 14px;scroll-padding-left:2px}
+ .service-carousel .service{flex:0 0 min(86%,360px);width:auto;min-width:0;min-height:250px;padding:20px;overflow-wrap:break-word}
+ .service-carousel .service h3{font-size:1.15rem;line-height:1.3}
+ .service-carousel .service p{font-size:.96rem;line-height:1.6}
+ .service-carousel .service a{line-height:1.5}
+ .carousel-controls{justify-content:center}
+ .carousel-hint{text-align:center}
+ .mobile{box-sizing:border-box;display:flex;align-items:stretch;gap:10px;padding:8px max(12px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+ .mobile .btn{flex:1 1 0;width:0;min-width:0;max-width:100%;min-height:50px;padding:10px 5px;font-size:clamp(.78rem,3.55vw,.95rem);line-height:1.2;white-space:nowrap}
+ body{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+ #faqs{scroll-margin-top:76px;padding-bottom:calc(52px + 74px + env(safe-area-inset-bottom))}
+ #contact,#location,#services,#about{scroll-margin-top:76px}
+ .footer{padding-bottom:calc(86px + env(safe-area-inset-bottom))}
+ input,select,textarea{font-size:16px!important}
+}
+@media(max-width:370px){
+ .hero .actions{grid-template-columns:minmax(0,1fr)}
+ .hero .actions .btn{font-size:.95rem}
+ .mobile{gap:7px;padding-left:8px;padding-right:8px}
+ .mobile .btn{font-size:.78rem}
+}
+@supports not (overflow:clip){body{overflow-x:hidden}}
+@media(prefers-reduced-motion:reduce){.service-carousel{scroll-behavior:auto}}
