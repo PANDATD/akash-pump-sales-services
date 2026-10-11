@@ -106,3 +106,38 @@ h1{font-weight:800;letter-spacing:-.045em}
 }
 @media(min-width:851px){.menu-toggle{display:none}.navlinks{display:flex!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.service-carousel{scroll-behavior:auto}}
+
+
+/* Final mobile layout corrections */
+@media (max-width: 850px) {
+  .top { display: none; }
+  .header nav { min-height: 64px; gap: 12px; }
+  .brand { min-width: 0; gap: 8px; }
+  .brand img { width: 38px; height: 38px; }
+  .brand > div { font-size: .9rem; }
+  .brand span { font-size: .62rem; }
+  .menu-toggle { display: inline-flex !important; min-width: 84px; }
+  .navlinks:not(.open) { display: none !important; }
+  .navlinks.open { display: flex !important; }
+  .navlinks { z-index: 10; }
+}
+@media (max-width: 620px) {
+  .header nav { min-height: 62px; }
+  .brand > div { font-size: .82rem; }
+  .brand span { font-size: .58rem; }
+  .menu-toggle { min-height: 44px; padding: 8px 10px; }
+  #services { padding-bottom: 24px; }
+  #services .head { margin-bottom: 20px; }
+  .carousel-controls { margin-top: 4px; }
+  .service-carousel { padding-bottom: 12px; }
+  #faqs { padding-bottom: calc(58px + 82px + env(safe-area-inset-bottom)); }
+  .faq-list { gap: 10px; }
+  .faq-list details { padding: 17px 18px; }
+  .mobile { min-height: 72px; }
+  body { padding-bottom: calc(82px + env(safe-area-inset-bottom)); }
+  .num { color: #096b35; background: #e5f5eb; }
+  .num.hours { width: 42px; min-width: 42px; height: 32px; border-radius: 999px; font-size: .68rem; letter-spacing: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-carousel { scroll-behavior: auto; }
+}
