@@ -13,7 +13,7 @@ Responsive enquiry website focused on Pune. No ecommerce, payment gateway, front
 Configure these in Vercel → Project Settings → Environment Variables:
 - `RESEND_API_KEY`: Resend API key.
 - `NOTIFICATION_EMAIL`: the recipient address chosen by the business.
-- `RESEND_FROM_EMAIL`: a sender address on a domain verified in Resend, e.g. `Website Enquiries <website@your-verified-domain.example>`.
+- `RESEND_FROM_EMAIL`: required sender address on a domain verified in Resend, e.g. `Website Enquiries <website@your-verified-domain.example>`.
 - `RESEND_REPLY_TO` (optional): reply-to address.
 
 Redeploy after adding variables. The form reports an error and offers WhatsApp until required variables are configured. Test a real submission before treating email delivery as working. Never commit API keys.
