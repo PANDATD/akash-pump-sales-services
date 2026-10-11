@@ -90,3 +90,11 @@ body{min-width:0;overflow-x:clip}
 }
 @supports not (overflow:clip){body{overflow-x:hidden}}
 @media(prefers-reduced-motion:reduce){.service-carousel{scroll-behavior:auto}}
+
+
+/* Consistent service icon system */
+.service .ico{width:48px;height:48px;display:grid;place-items:center;border:1px solid #dbe7f5;border-radius:14px;background:linear-gradient(145deg,#f3f7fd,#e8f0fb);color:var(--navy);font-size:1rem}
+.service .ico svg{display:block;width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.service:nth-child(even) .ico svg{color:var(--red)}
+.service .ico svg path,.service .ico svg rect,.service .ico svg circle{vector-effect:non-scaling-stroke}
+@media(max-width:620px){.service .ico{width:46px;height:46px}.service .ico svg{width:24px;height:24px}}
