@@ -72,3 +72,20 @@ h1{font-weight:800;letter-spacing:-.045em}
 
 .checklist-title{margin:0;color:var(--navy)}.checklist-title-spaced{margin-top:24px}
 .hp-field{position:absolute!important;left:-10000px!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}
+
+/* Mobile navigation and enquiry-form usability */
+.menu-toggle{display:none;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);font:inherit;font-weight:800;cursor:pointer}
+.menu-icon{font-size:1.15rem;line-height:1}
+.optional{font-weight:500;color:var(--muted);font-size:.9em}
+.field-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.field-meta .tiny{margin:4px 0 0}
+@media(max-width:850px){
+ .header nav{position:relative}
+ .menu-toggle{display:inline-flex;flex-shrink:0}
+ .navlinks{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px 16px 16px;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;box-shadow:0 18px 30px #102b5f18}
+ .navlinks.open{display:flex}
+ .navlinks>a:not(.btn){display:block;padding:12px 4px;border-bottom:1px solid #edf1f7}
+ .navlinks .btn{margin-top:12px}
+}
+@media(min-width:851px){.menu-toggle{display:none}.navlinks{display:flex!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.service-carousel{scroll-behavior:auto}}
