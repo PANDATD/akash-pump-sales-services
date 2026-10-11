@@ -1,5 +1,11 @@
 document.getElementById("year").textContent=new Date().getFullYear();
 const menuToggle=document.getElementById("menu-toggle"),primaryNavigation=document.getElementById("primary-navigation");
+menuToggle.addEventListener("click",()=>{const expanded=menuToggle.getAttribute("aria-expanded")==="true";menuToggle.setAttribute("aria-expanded",String(!expanded));primaryNavigation.classList.toggle("open",!expanded);menuToggle.querySelector(".menu-label").textContent=expanded?"Menu":"Close";menuToggle.querySelector("span:first-child").textContent=expanded?"☰":"×"});
+primaryNavigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{primaryNavigation.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.querySelector(".menu-label").textContent="Menu";menuToggle.querySelector("span:first-child").textContent="☰"}));
+const messageField=document.getElementById("message"),messageCount=document.getElementById("message-count");
+function updateMessageCount(){messageCount.textContent=messageField.value.length+" / 2000"}
+messageField.addEventListener("input",updateMessageCount);updateMessageCount();
+const menuToggle=document.getElementById("menu-toggle"),primaryNavigation=document.getElementById("primary-navigation");
 menuToggle.addEventListener("click",()=>{const expanded=menuToggle.getAttribute("aria-expanded")==="true";menuToggle.setAttribute("aria-expanded",String(!expanded));primaryNavigation.classList.toggle("open",!expanded);menuToggle.querySelector(".menu-label").textContent=expanded?"Menu":"Close";menuToggle.querySelector(".menu-icon").textContent=expanded?"☰":"×"});
 primaryNavigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{primaryNavigation.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.querySelector(".menu-label").textContent="Menu";menuToggle.querySelector(".menu-icon").textContent="☰"}));
 const messageField=document.getElementById("message"),messageCount=document.getElementById("message-count");
