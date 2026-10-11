@@ -1,11 +1,19 @@
 export default async function handler(req, res) {
   if (req.method !== "POST") { res.setHeader("Allow", "POST"); return res.status(405).json({ error: "Method not allowed." }); }
   const origin = req.headers.origin;
-  if (origin && req.headers.host && new URL(origin).host !== req.headers.host) return res.status(403).json({ error: "Request origin is not allowed." });
+  if (origin && req.headers.host) {
+    try { if (new URL(origin).host !== req.headers.host) return res.status(403).json({ error: "Request origin is not allowed." }); }
+    catch { return res.status(403).json({ error: "Request origin is not allowed." }); }
+  }
   const body = req.body && typeof req.body === "object" ? req.body : {};
+  if (String(body.website || "").trim()) return res.status(200).json({ ok: true });
   const name = String(body.name || "").trim(), phone = String(body.phone || "").trim(), service = String(body.service || "").trim(), message = String(body.message || "").trim();
   if (!name || !phone || !service || !message) return res.status(400).json({ error: "Please complete all required fields." });
   if (name.length > 100 || phone.length > 20 || service.length > 80 || message.length > 2000) return res.status(400).json({ error: "One or more fields exceed the allowed length." });
+  const allowedServices = ["Repairing", "Rewinding", "Hydro-Pneumatic System", "Booster System", "Automation", "Installation", "Sewage Pump", "Sales enquiry", "Other"];
+  if (!allowedServices.includes(service)) return res.status(400).json({ error: "Please select a valid service." });
+  const phoneDigits = phone.replace(/\\D/g, "");
+  if (phoneDigits.length < 7 || phoneDigits.length > 15) return res.status(400).json({ error: "Please enter a valid phone number." });
   const email = process.env.NOTIFICATION_EMAIL;
   const apiKey = process.env.RESEND_API_KEY;
   const sender = process.env.RESEND_FROM_EMAIL;
