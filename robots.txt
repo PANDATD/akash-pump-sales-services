@@ -1,3 +1,4 @@
 User-agent: *
-Allow: /\nDisallow: /api/
+Allow: /
+Disallow: /api/
 Sitemap: https://akash-pump-sales-services.vercel.app/sitemap.xml
