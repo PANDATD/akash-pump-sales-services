@@ -4,6 +4,7 @@ Responsive enquiry website focused on Pune. No ecommerce, payment gateway, front
 
 ## Included
 - Responsive landing page with services from the provided signboard.
+- Accessible collapsible mobile navigation and enquiry-form locality field, with message character count.
 - Separate `styles.css` and `script.js` files so browser caching and future maintenance are easier without introducing a frontend framework or build step.
 - WhatsApp and phone links for 9822791005 and 9850030224.
 - Vercel serverless contact endpoint using Resend, with server-side service/phone validation and a basic honeypot spam trap.
