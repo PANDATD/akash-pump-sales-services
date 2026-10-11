@@ -1,1 +1,3 @@
-User-agent: *\nAllow: /\nSitemap: https://akash-pump-sales-services.vercel.app/sitemap.xml\n
+User-agent: *
+Allow: /
+Sitemap: https://akash-pump-sales-services.vercel.app/sitemap.xml
