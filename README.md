@@ -7,6 +7,8 @@ Responsive enquiry website focused on Pune. No ecommerce, payment gateway, front
 - WhatsApp and phone links for 9822791005 and 9850030224.
 - Vercel serverless contact endpoint using Resend.
 - SEO metadata, LocalBusiness JSON-LD, sitemap, robots.txt, SVG logo/favicon/social cover.
+- Open Graph metadata for Facebook/WhatsApp and Twitter/X large-image cards.
+- Keyboard-operable service carousel and embedded Google Map from the coordinates supplied by the client.
 - Privacy notice.
 
 ## Email notifications
@@ -23,6 +25,12 @@ Redeploy after adding variables. The form reports an error and offers WhatsApp u
 2. Configure email environment variables above.
 3. Deploy and test both phone links, WhatsApp, form submission and email delivery.
 4. If Vercel assigns another domain, update canonical/Open Graph/JSON-LD URLs in `index.html`, plus `robots.txt` and `sitemap.xml`.
+
+## Social previews and map
+- Open Graph and Twitter Card metadata are defined in `index.html`; preview images use `og-cover.svg`.
+- Social platforms may cache previews. After deployment, use each platform's link preview/debugging tool to request a refresh.
+- SVG preview support varies by crawler. For the most consistent Facebook/WhatsApp/X preview support, replace `og-cover.svg` with a 1200×630 PNG or JPEG and update `og:image` and `twitter:image` to that public asset.
+- The map is centered on 18.524472, 73.963778 (18°31'28.1\"N, 73°57'49.6\"E). Confirm that the pin represents the business location before launch.
 
 ## SEO launch checklist
 - Confirm final deployment domain and update URLs consistently.
