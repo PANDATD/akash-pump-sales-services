@@ -4,9 +4,11 @@ Responsive enquiry website focused on Pune. No ecommerce, payment gateway, front
 
 ## Included
 - Responsive landing page with services from the provided signboard.
+- Separate `styles.css` and `script.js` files so browser caching and future maintenance are easier without introducing a frontend framework or build step.
 - WhatsApp and phone links for 9822791005 and 9850030224.
 - Vercel serverless contact endpoint using Resend.
-- SEO metadata, LocalBusiness JSON-LD, sitemap, robots.txt, SVG logo/favicon/social cover.
+- SEO title and description, canonical URL, LocalBusiness JSON-LD, sitemap, robots.txt, SVG logo/favicon/social cover.
+- Static-first delivery with no runtime frontend dependencies; the contact form is the only serverless API endpoint.
 - Open Graph metadata for Facebook/WhatsApp and Twitter/X large-image cards.
 - Pune-focused homepage copy, expanded service descriptions and five customer FAQs.
 - Owner-provided business details: 30 years of experience, Pune City service area, business hours 10:00 AM–8:00 PM (operating days not supplied).
@@ -22,6 +24,17 @@ Configure these in Vercel → Project Settings → Environment Variables:
 
 Redeploy after adding variables. The form reports an error and offers WhatsApp until required variables are configured. Test a real submission before treating email delivery as working. Never commit API keys.
 
+## Google Search and SEO launch checklist
+
+1. Confirm the production domain. The canonical URL, Open Graph URLs, JSON-LD URL, `robots.txt` sitemap URL and `sitemap.xml` URLs must all use the same final HTTPS domain.
+2. Verify the domain in [Google Search Console](https://search.google.com/search-console/about), submit `/sitemap.xml`, and use URL Inspection to check the homepage and privacy page. A sitemap helps discovery but does not guarantee indexing or ranking.
+3. Create or verify the business's Google Business Profile using the real-world business name and accurate service area. Do not invent a street address, use an unstaffed virtual address, or claim operating days that the owner has not confirmed. Follow [Google's Business Profile guidelines](https://support.google.com/business/answer/3038177?hl=en-IN).
+4. Measure the deployed site with [PageSpeed Insights](https://pagespeed.web.dev/) and monitor Core Web Vitals in Search Console. Prioritise mobile performance and layout stability; do not claim a score until measured.
+5. Add genuine project photos once supplied. Resize/compress each image, use descriptive filenames and meaningful alt text, and place the images next to accurate project descriptions. Do not imply a photo is a client project unless it is genuine.
+6. Build separate service pages only when there is enough distinct, accurate information to help customers with that service. Avoid thin pages that repeat the same copy with only a service keyword changed.
+7. Do not add `openingHoursSpecification` until the owner confirms the days of operation. Do not add a postal address until the owner provides the verified address.
+
+Google's [SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [Core Web Vitals guidance](https://developers.google.com/search/docs/appearance/core-web-vitals) are the reference points for ongoing checks.
 ## Deployment
 1. Connect this repository to Vercel; use framework preset Other, no build command, no output directory.
 2. Configure email environment variables above.
