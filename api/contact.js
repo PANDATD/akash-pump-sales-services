@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   if (name.length > 100 || phone.length > 20 || service.length > 80 || message.length > 2000) return res.status(400).json({ error: "One or more fields exceed the allowed length." });
   const allowedServices = ["Repairing", "Rewinding", "Hydro-Pneumatic System", "Booster System", "Automation", "Installation", "Sewage Pump", "Sales enquiry", "Other"];
   if (!allowedServices.includes(service)) return res.status(400).json({ error: "Please select a valid service." });
-  const phoneDigits = phone.replace(/\\D/g, "");
+  const phoneDigits = phone.replace(/\D/g, "");
   if (phoneDigits.length < 7 || phoneDigits.length > 15) return res.status(400).json({ error: "Please enter a valid phone number." });
   const email = process.env.NOTIFICATION_EMAIL;
   const apiKey = process.env.RESEND_API_KEY;
