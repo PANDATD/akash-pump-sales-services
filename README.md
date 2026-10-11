@@ -34,6 +34,22 @@ Redeploy after adding variables. The form reports an error and offers WhatsApp u
 - SVG preview support varies by crawler. For the most consistent Facebook/WhatsApp/X preview support, replace `og-cover.svg` with a 1200×630 PNG or JPEG and update `og:image` and `twitter:image` to that public asset.
 - The map is centered on 18.524472, 73.963778 (18°31'28.1\"N, 73°57'49.6\"E). Confirm that the pin represents the business location before launch.
 
+## Competitive review and UX notes
+
+A public-web review of Pune pump and motor service websites found recurring useful patterns: clearly separated repair/service lists, visible phone and business hours, and genuine workshop/project photography. Examples reviewed include:
+- [Shri Krishna Engineering Services](https://www.skespune.com/Our-Services) — explicit pump installation, servicing, overhauling and rewinding scope.
+- [The Indian Electric Company](https://www.indianelectric.com/contact-us.html) — separates office and repair locations and publishes contact details/hours.
+- [Avihas Equipments](https://aeplpune.in/) — uses service-specific content and a real-work gallery.
+
+Implementation priorities for Akash Pump Sales & Services:
+- Keep phone and WhatsApp actions prominent on mobile.
+- Show the owner-confirmed 30 years of experience, Pune City coverage, and 10:00 AM–8:00 PM hours without implying unconfirmed operating days.
+- Use only real, owner-approved project photos when those files are supplied.
+- Keep the coordinate pin clearly distinguished from a verified postal address.
+- Avoid copying competitor wording, unsupported guarantees, ratings, brands, or technical capabilities.
+
+The supplied coordinates appear near Manjari Budruk in map/business search results. The owner should verify that the pin marks the actual premises before launch.
+
 ## SEO launch checklist
 - Confirm final deployment domain and update canonical, Open Graph, JSON-LD, sitemap and robots URLs consistently.
 - Replace the SVG social cover with a 1200×630 PNG/JPEG for more reliable social crawler support.
