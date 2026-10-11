@@ -9,6 +9,7 @@ Responsive enquiry website focused on Pune. No ecommerce, payment gateway, front
 - SEO metadata, LocalBusiness JSON-LD, sitemap, robots.txt, SVG logo/favicon/social cover.
 - Open Graph metadata for Facebook/WhatsApp and Twitter/X large-image cards.
 - Pune-focused homepage copy, expanded service descriptions and five customer FAQs.
+- Owner-provided business details: 30 years of experience, Pune City service area, business hours 10:00 AM–8:00 PM (operating days not supplied).
 - Keyboard-operable service carousel and embedded Google Map from the coordinates supplied by the client.
 - Privacy notice.
 
@@ -37,7 +38,9 @@ Redeploy after adding variables. The form reports an error and offers WhatsApp u
 - Confirm final deployment domain and update canonical, Open Graph, JSON-LD, sitemap and robots URLs consistently.
 - Replace the SVG social cover with a 1200×630 PNG/JPEG for more reliable social crawler support.
 - Confirm the supplied map pin is the business location before publishing it as a business geo coordinate.
-- Ask the owner for the public business address, actual service coverage, business hours, and any verified proof points before adding them to copy or structured data.
+- Public business address was not supplied; do not invent one.
+- Confirm operating days before adding structured opening-hours data; only 10:00 AM–8:00 PM was supplied.
+- Owner says real project photos are available, but photo files are not currently present in the repository. Add the approved originals under an `/images/projects/` directory and use them in a project gallery only after the files are provided.
 - Consider separate service landing pages only after confirming the services and enough unique, useful information for each page.
 - Keep FAQs aligned with actual business policies; the current copy intentionally does not promise response times, prices or availability.
 - Add a public business address only with owner approval; none was supplied.
