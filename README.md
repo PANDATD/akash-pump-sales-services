@@ -32,5 +32,7 @@ Redeploy after adding variables. The form reports an error and offers WhatsApp u
 - Verify in Google Search Console and submit sitemap.
 - Check mobile usability and Core Web Vitals after launch.
 
-## Security
-The API validates required fields and length limits, checks request origin, and uses environment variables for secrets. Enquiries are not stored in a database. Add rate limiting or bot protection if spam becomes an issue.
+## Security and verification
+The API validates required fields and length limits, checks request origin, and uses environment variables for secrets. The sender address must be verified in Resend. Enquiries are not stored in a database. Add rate limiting or bot protection if spam becomes an issue.
+
+Before launch, test missing fields, oversized fields, missing environment variables, Resend failure, keyboard-only navigation, mobile sticky buttons, and both WhatsApp destinations.
